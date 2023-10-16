@@ -7,7 +7,7 @@ require 'tempfile'
 require 'yaml'
 
 srvpath = Pathname.new(File.dirname(__FILE__)).realpath
-configfile = YAML.load_file(File.join(srvpath, "/.gitlab-ci.yml"))
+configfile = YAML.load_file(File.join(srvpath, "/.gitlab-ci.yml"), aliases: true)
 remote_url = 'https://github.com/guardianproject/tor-android.git'
 
 # set up essential environment variables
